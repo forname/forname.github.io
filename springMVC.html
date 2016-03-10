@@ -1,0 +1,467 @@
+
+<!doctype html>
+<!--[if lt IE 8 ]>    <html class="underie8"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if gt IE 8]>  <html class="afterie8"> <!--<![endif]-->
+<!--[if !(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>有道云笔记</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <script src="../bower_components/modernizr/modernizr.js"></script>
+    <link rel="stylesheet" href="styles/file.min-76822a1855.css" type="text/css"/>
+</head>
+<body>
+<div class="loading">
+    <i class="loading-icon"></i>
+</div>
+
+<div class="banner">
+    <div class="banner-main">
+        <div class="group-logo">
+            <div class="vline logo-line"></div>
+        </div>
+        <div class="banner-right">
+            <div class="banner-right-container">
+                <div class="account">
+                    <img src="./images/no_photo_user.png" alt="" class="user-photo">
+                    <span class="name"></span>
+                    <ul class="anonymous-name">
+                        <li class="anonymous-name-text"></li>
+                        <li><a class="anonymous-name-change">修改昵称</a> <a class="anonymous-name-login">登录</a></li>
+                    </ul>
+                    <div class="vline banner-line"></div>
+                </div>
+                <a href="http://note.youdao.com/download.html?auto=1" target="_blank" class="download-note" id="download-client">
+                    <span id="download-client-text">下载有道云笔记</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="hint-container">
+        <div class="hint-parent">
+            <i id="hint-icon"></i>
+            <div id="hint"></div>
+        </div>
+    </div>
+</div>
+
+<div class="drop-list">
+    <ul class="change-name-drop">
+        <li>输入昵称：</li>
+        <li><input type="text" name="" id=""></li>
+        <li><a class="drop-buttom popup-buttom-active">确定</a></li>
+    </ul>
+    <ul class="name-drop">
+        <li><a href="http://note.youdao.com/web" target="_blank">进入我的笔记</a></li>
+        <li><a class="logout">退出当前账号</a></li>
+    </ul>
+    <div id="attendee-dialog"></div>
+    <div id="lstime"></div>
+</div>
+
+<div id="main-container">
+    <div id="main" class="file">
+        <div class="show-warn"></div>
+        <div id="main-mask">
+            <form id="pwd-dialog">
+                <div class="vcontainer">
+                    <i class="pwd-icon"></i>
+                </div>
+                <div class="vcontainer">
+                    <p class="pwd-hint">此链接为加密链接，请输入密码查看</p>
+                    <div>
+                        <input type="text" name="pwd" class="pwd-input"/>
+                        <input type="submit" value="确定" class="btn"/>
+                    </div>
+                    <p id="pwd-error">密码输入错误，请重新输入</p>
+                </div>
+            </form>
+        </div>
+        <div class="share-content">
+            <div class="content-header">
+                <div class="file-name-container">
+                </div>
+                <div class="button-drawer">
+                    <span class="btn save-to-note">
+                        <i class="save-to-note-icon"></i>
+                        <span class="hint">保存到笔记</span>
+                    </span>
+                    <span class="btn btn-share">
+                        <i class="share-icon"></i>
+                        <span class="hint share-text">分享</span>
+                    </span>
+                </div>
+                <div class="info-container">
+                    <img class="user-portrait"/>
+                    <div class="user-name-container">
+                      <p class="user-name">
+                      </p>
+                    </div>
+                    <div class="vline user-photo-line"></div>
+                    <div class="time-container modify-time-container">
+                      <span class="modify-time time"></span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="content-container">
+            </div>
+            <div class="footer">
+                <div class="read-times-container">
+                    <span class="read">阅读数  </span>
+                    <span class="read-text"></span>
+                </div>
+                <div class="praise">
+                    <i class="praise-icon"></i>
+                    <span class="praise-text">赞   </span>
+                    (<span class="praise-times"></span>)
+                </div>
+                <div class="report">
+                    <i class="report-icon"></i>
+                    <a class="report-text">举报>></a>
+                </div>
+            </div>
+            <div class="ad-container1" style="display: none">
+                <div class="guanggao-header">推荐阅读</div>
+                <div class="blue-line"></div>
+                <div id="normal-ad-note1" class="normal-ad">
+                    <div class="ad1">
+                        <div class="dot"></div>
+                        <span class="ad"></span>
+                        </div>
+                    <div class="ad2">
+                        <div class="dot"></div>
+                        <a href="http://note.youdao.com/share/?id=692e33c43e77fd1a4c250c1fc62553cb&type=note" target="_blank">关于工资的三个秘密</a>
+                    </div>
+                    <div class="ad3">
+                        <div class="dot"></div>
+                        <a href="http://note.youdao.com/share/?id=3e4a9a82f65c01ac96140cbc2968232a&type=note" target="_blank">吴晓波自述：吴晓波频道的电商试验</a>
+                    </div>
+                </div>
+            </div>
+            <div class="ad-container2" style="display: none">
+                <div class="guanggao-header">推荐</div>
+                <span id="normal-ad-note2" class="normal-ad">
+                    <span></span>
+                </span>
+            </div>
+        </div>
+
+        <div class="share-download">
+            <div class="content-header">
+                <div class="file-name-container">
+                </div>
+                <div class="button-drawer">
+                    <span class="btn save-to-note">
+                        <i class="save-to-note-icon"></i>
+                        <span class="hint">保存到笔记</span>
+                    </span>
+                    <a class="btn btn-preview">
+                        <i class="preview-icon"></i>
+                        <span class="hint preview-text">预览</span>
+                    </a>
+                    <a class="btn btn-download">
+                        <i class="download-icon"></i>
+                        <span class="hint download-text"></span>
+                    </a>
+                    <span class="btn btn-share">
+                        <i class="share-icon"></i>
+                        <span class="hint share-text">分享</span>
+                    </span>
+                </div>
+                <div class="info-container">
+                    <img class="user-portrait"/>
+                    <div class="user-name-container">
+                      <p class="user-name">
+                      </p>
+                    </div>
+                    <div class="vline user-photo-line"></div>
+                    <div class="time-container modify-time-container">
+                      <span class="modify-time time"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="content-container">
+                <div id="img-download"></div>
+                <div id="not-image"></div>
+                <div id="text-download" class="description-text">此文件暂不支持预览</div>
+            </div>
+            <div class="footer">
+                <div class="read-times-container">
+                    <span class="read">阅读数  </span>
+                    <span class="read-text"></span>
+                </div>
+                <div class="praise">
+                    <i class="praise-icon"></i>
+                    <span class="praise-text">赞   </span>
+                    (<span class="praise-times"></span>)
+                </div>
+                <div class="report">
+                    <i class="report-icon"></i>
+                    <a class="report-text">举报>></a>
+                </div>
+            </div>
+            <div class="ad-container1" style="display: none">
+                <div class="guanggao-header">推荐阅读</div>
+                <div class="blue-line"></div>
+                <div id="normal-ad-download1" class="normal-ad">
+                    <div class="ad1">
+                        <div class="dot"></div>
+                        <a href="http://note.youdao.com/share/?id=692e33c43e77fd1a4c250c1fc62553cb&type=note" target="_blank">关于工资的三个秘密</a>
+                    </div>
+                    <div class="ad2">
+                        <div class="dot"></div>
+                        <span class="ad"></span>
+                    </div>
+                    <div class="ad3">
+                        <div class="dot"></div>
+                        <a href="http://note.youdao.com/share/?id=3e4a9a82f65c01ac96140cbc2968232a&type=note" target="_blank">吴晓波自述：吴晓波频道的电商试验</a>
+                    </div>
+                </div>
+            </div>
+            <div class="ad-container2" style="display: none">
+                <div class="guanggao-header">推荐</div>
+                <span id="normal-ad-download2" class="normal-ad">
+                    <span></span>
+                </span>
+            </div>
+        </div>
+
+        <div class="share-office">
+            <div class="content-header">
+                <div class="file-name-container">
+                </div>
+                <div class="button-drawer">
+                    <span class="btn save-to-note">
+                        <i class="save-to-note-icon"></i>
+                        <span class="hint">保存到笔记</span>
+                    </span>
+                    <a class="btn btn-download">
+                        <i class="download-icon"></i>
+                        <span class="hint download-text"></span>
+                    </a>
+                    <span class="btn btn-share">
+                        <i class="share-icon"></i>
+                        <span class="hint">分享</span>
+                    </span>
+                </div>
+                <div class="info-container">
+                    <img class="user-portrait"/>
+                    <div class="user-name-container">
+                      <p class="user-name">
+                      </p>
+                    </div>
+                    <div class="vline user-photo-line"></div>
+                    <div class="time-container modify-time-container">
+                      <span class="modify-time time"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="content-container"></div>
+            <div class="footer">
+                <div class="read-times-container">
+                    <span class="read">阅读数  </span>
+                    <span class="read-text"></span>
+                </div>
+                <div class="praise">
+                    <i class="praise-icon"></i>
+                    <span class="praise-text">赞   </span>
+                    (<span class="praise-times"></span>)
+                </div>
+                <div class="report">
+                    <i class="report-icon"></i>
+                    <a class="report-text">举报>></a>
+                </div>
+            </div>
+            <div class="ad-container1" style="display: none">
+                <div class="guanggao-header">推荐阅读</div>
+                <div class="blue-line"></div>
+                <div id="normal-ad-office1" class="normal-ad">
+                    <div class="ad1">
+                        <div class="dot"></div>
+                        <a href="http://note.youdao.com/share/?id=692e33c43e77fd1a4c250c1fc62553cb&type=note" target="_blank">关于工资的三个秘密</a>
+                    </div>
+                    <div class="ad2">
+                        <div class="dot"></div>
+                        <span class="ad"></span>
+                    </div>
+                    <div class="ad3">
+                        <div class="dot"></div>
+                        <a href="http://note.youdao.com/share/?id=3e4a9a82f65c01ac96140cbc2968232a&type=note" target="_blank">吴晓波自述：吴晓波频道的电商试验</a>
+                    </div>
+                </div>
+            </div>
+            <div class="ad-container2" style="display: none">
+                <div class="guanggao-header">推荐</div>
+                <span id="normal-ad-office2" class="normal-ad">
+                    <span></span>
+                </span>
+            </div>
+        </div>
+
+        <div class="save" id="note-save"></div>
+    </div>
+    <div class="mianze">
+        本内容由用户通过“有道云笔记”发布，并不代表有道的立场
+    </div>
+</div>
+
+<div id="alert" class="alert">
+    <div id="dialogoverlay" class="mask"></div>
+    <div id="dialogbox" class="dialog">
+        <div id="dialoghead" class="dialog-head">
+            <span id="dialogtitle"></span>
+            <i class="close_icon"></i>
+        </div>
+        <div id="dialogbody" class="dialog-body"></div>
+        <div id="dialogfoot" class="dialog-foot">
+            <button id="ok" class="ok-button button"><a target="_blank" href="http://note.youdao.com/download.html?auto=1">去下载</a></button>
+        </div>
+    </div>
+</div>
+
+<div class="show-alert-body">
+    <div class="show-alert">
+        <div class="show-alert-title"></div>
+        <div class="show-alert-content">
+        </div>
+        <p class="show-alert-button"><a class="show-alert-confirm popup-buttom-active">确定</a> <a class="show-alert-cancel popup-buttom-inact">取消</a></p>
+    </div>
+</div>
+
+<div class="download-hint">
+    <i class="download-hint-icon"></i>
+    <span class="download-hint-text">保存本篇笔记后，下载有道云笔记查看完整内容</span>
+</div>
+
+<script id="attendee-tmpl" type="text/x-jsrender">
+    <div class="attendee-hint">
+        <i id="attendee-icon"></i>
+        <span id="attendee-num">{{:userlist.length}}人正在编辑</span>
+    </div>
+    <ul id="attendee-list">
+        {{for userlist}}
+        <li id="user-{{:id}}" class="attendee">
+            <span class="photo">
+                <i class="portrait" {{if portrait}} style="background-image: url({{:portrait}})" {{/if}}></i>
+                <i class="color-bg"></i>
+                <i class="color" style="background-color: {{:color}}"></i>
+            </span>
+            <span class="nickname" title={{:name}}>{{:name}}</span>
+        </li>
+        {{/for}}
+    </ul>
+
+</script>
+
+
+<script id="menu-tmpl" type="text/x-jsrender">
+<ul class="menu-container" style="top: {{:top}}px; left: {{:left}}px;">
+    {{for items}}
+    {{if type === 2}}
+    <li class="item split-line"></li>
+    {{else}}
+    <li onclick="onMenuItem({{:index}})" class="item">{{:label}}</li>
+    {{/if}}
+    {{/for}}
+</ul>
+</script>
+
+<input id="editor-upload" type="file"/>
+
+<script id="savePathTmpl" type="text/x-jsrender">
+    <div class="close"></div>
+    <div class="title">保存到云笔记</div>
+    <div class="content">
+        <div class="content-header">
+            <div class="folder-icon"></div>
+            <div class="selected-folder-name" title={{:selectedFolderName}} id="selected">{{:selectedFolderName}}</div>
+        </div>
+        <div class="content-body">
+            <div class="selected-path" id="selected-path">{{:defaultFolder}}</div>
+            <div class="vline path-line"></div>
+            <div class="modify" id="modify">更改</div>
+        </div>
+        <div class="content-detail" id="save-path-select">
+        </div>
+    </div>
+    <div class="footer">
+        <div class="btn-container">
+            <div class="footer-btn btn-ok">保存</div>
+            <div class="footer-btn btn-cancel">取消</div>
+        </div>
+    </div>
+</script>
+<script id="pathTextTmpl" type="text/x-jsrender">
+    {{if !isRootFolder}}
+        <i class="explorer-arrow"></i>
+        <span data-id={{:id}} class="stack-text" title={{:name}}>{{:name}}</span>
+    {{else}}
+        <span data-id={{:id}} class="stack-text" title={{:name}}>{{:name}}</span>
+    {{/if}}
+</script>
+<script id="pathDetailTmpl" type="text/x-jsrender">
+    <div class="save-tree-node">
+        <div class="node" data-id={{:id}}>
+            <div class="expand-area" data-id={{:id}}>
+                {{if hasChildDir}}
+                    <div class="icon-expand"></div>
+                {{else}}
+                    <div class="icon-empty"></div>
+                {{/if}}
+            </div>
+            <div class="folder-icon save-detail-folder"></div>
+            <div class="save-detail-folder-name">{{:name}}</div>
+        </div>
+        <div class="children">
+        </div>
+    </div>
+</script>
+<script id="remindTmpl" type="text/x-jsrender">
+        <div class="remind-content">
+            <input class="remind-check" type="checkbox" disabled {{if checked}}checked{{/if}}/>
+            <i class="remind-watch {{if remind}}reminded{{/if}}"></i>
+            <span class="remind-text">{{:content}}</span>
+        </div>
+    </script>
+
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/jsrender/jsrender.min.js"></script>
+<script src="../bower_components/underscore/underscore-min.js"></script>
+<script src="../bower_components/iframe-resizer/src/iframeResizer.js"></script>
+<script src="../bower_components/util/src/stringComparator.js"></script>
+<script src="ZeroClipboard.js"></script>
+<script>
+    ZeroClipboard.setDefaults({
+
+        // The path must be relative to the PAGE, NOT to the current AMD module!
+        // Or, it could be an absolute path on the domain, e.g.:
+        //  - "/javascripts/ZeroClipboard.swf"
+        // Or, it could be an absolute URL to anywhere, e.g.:
+        //  - "//" + window.location.host + "/javascripts/ZeroClipboard.swf"
+        //  - "//localhost:3000/javascripts/ZeroClipboard.swf"
+        //  - "//my.awesomecdn.com/javascripts/ZeroClipboard.swf"
+        //  - "http://my.awesomecdn.com/javascripts/ZeroClipboard.swf"
+        moviePath:  "./ZeroClipboard.swf"
+
+    });
+</script>
+
+<script src="/scripts/cstk.js"></script>
+
+<script src="scripts/filemain-dbf184f33d.js"></script>
+
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?daa6306fe91b10d0ed6b39c4b0a407cd";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+</body>
+</html>
